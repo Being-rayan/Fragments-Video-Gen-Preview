@@ -1,51 +1,120 @@
 # FRAGMENTS
 
-FRAGMENTS is an AI-powered educational video generation platform that transforms a topic or learning idea into a complete short-form video with script, visuals, narration, subtitles, and final MP4 output.
+FRAGMENTS is a full-stack AI-powered educational video generation platform that transforms a simple topic into a complete short-form educational video with script generation, narration, subtitles, visuals, and final MP4 export.
 
-Live Project: https://fragments-gemini-based.vercel.app/
+**Live Demo:** https://fragments-gemini-based.vercel.app/  
+**Source Code:** Private  
+**Preview Repository:** Documentation and project showcase only
 
-## Project Preview
+---
 
-This repository is a public preview repository for FRAGMENTS.
+# Project Overview
 
-The full source code is kept private. This preview includes the project README and screenshots showing the deployed application, dashboard, video generation workflow, and generated output experience.
+FRAGMENTS solves the problem of manually creating educational short-form videos by automating the entire content generation and media assembly workflow.
 
-## What FRAGMENTS Does
+Traditional educational video creation requires multiple steps including:
 
-FRAGMENTS helps generate educational videos from simple user input. The system takes a topic, creates a structured script, prepares visual scenes, generates narration, adds subtitles, and assembles everything into a browser-playable video.
+- Topic research
+- Script writing
+- Visual collection
+- Voice recording
+- Subtitle editing
+- Video rendering
 
-The goal of the project is to reduce the manual effort required to create short learning videos by combining AI content generation, media processing, and a clean web dashboard.
+FRAGMENTS combines AI generation and media processing into a single platform where users can generate educational videos directly from a topic prompt.
 
-## Live Deployment
+The platform is designed as an AI-assisted educational media pipeline focused on automation, modular processing, and clean user interaction.
 
-The deployed version is available here:
+---
 
-https://fragments-gemini-based.vercel.app/
-
-## Core Features
+# Key Features
 
 - AI-powered topic-to-video generation
 - Gemini-based educational script generation
-- Scene planning with audio and visual structure
-- AI/web-assisted image generation and selection
-- Text-to-speech narration pipeline
+- Structured scene planning pipeline
+- Automated narration generation
 - Subtitle generation and rendering
-- MP4 video assembly
-- Generated video library
+- AI/web-assisted image generation workflow
+- MP4 video assembly pipeline
 - Video streaming and download support
-- Real-time generation status tracking
-- Clean React dashboard for managing generated videos
+- Generated video dashboard library
+- Real-time generation progress tracking
+- Clean React-based management dashboard
+- Full-stack AI media processing workflow
+- Browser-based generation experience
+- Vercel deployment support
 
-## Tech Stack
+---
 
-### Frontend
+# Video Generation Workflow
+
+```text
+User enters topic
+        |
+FRAGMENTS starts AI pipeline
+        |
+Gemini generates educational script
+        |
+Scenes are divided and structured
+        |
+Visual prompts and assets are prepared
+        |
+Narration audio is generated
+        |
+Subtitles are generated and synced
+        |
+FFmpeg and MoviePy assemble video
+        |
+Final MP4 is rendered
+        |
+Generated video appears in dashboard
+        |
+User can stream or download video
+```
+
+---
+
+# Demo Workflow
+
+1. Open the live deployment
+2. Enter a learning topic or educational idea
+3. Submit the generation request
+4. FRAGMENTS generates the educational script
+5. The platform prepares visuals and narration
+6. Subtitle rendering and video assembly begin
+7. The final MP4 video appears in the dashboard
+8. Stream or download the generated video
+
+---
+
+# Core Generation Pipeline
+
+The project separates media generation into modular processing stages:
+
+| Stage | Responsibility |
+|---|---|
+| Script Generation | Educational script creation using Gemini |
+| Scene Planning | Dividing content into structured scenes |
+| Visual Pipeline | Preparing images and visual assets |
+| Narration Pipeline | Generating AI voice narration |
+| Subtitle Pipeline | Subtitle timing and rendering |
+| Video Assembly | FFmpeg and MoviePy processing |
+| Delivery Layer | Streaming and download support |
+
+This modular structure improves scalability, debugging, maintainability, and future feature expansion.
+
+---
+
+# Tech Stack
+
+## Frontend
 
 - React
 - Vite
 - Tailwind CSS
 - JavaScript
 
-### Backend
+## Backend
 
 - Python
 - FastAPI
@@ -53,54 +122,157 @@ https://fragments-gemini-based.vercel.app/
 - Pydantic
 - Gemini API
 
-### Media Processing
+## Media Processing
 
 - FFmpeg
 - MoviePy
 - OpenCV
 - Pillow
 - Kokoro TTS
-- Subtitle generation pipeline
+- Subtitle rendering pipeline
 
-### Deployment
+## Deployment
 
 - Vercel
+- Static frontend deployment
 - Python serverless API entrypoint
-- Static frontend build
-- Optional Vercel Blob support for media persistence
+- Optional Vercel Blob integration
 
-## System Workflow
+---
 
-1. The user enters a video topic and supporting details.
-2. The backend sends the request through the AI generation pipeline.
-3. Gemini creates a structured educational script.
-4. The system prepares visual scene prompts and image assets.
-5. Narration audio is generated from the script.
-6. Subtitles are created for the narration.
-7. FFmpeg and MoviePy assemble the final video.
-8. The generated video appears in the dashboard library.
-9. The user can preview, stream, download, or remove generated videos.
+# Frontend Responsibilities
 
-## Project Architecture
+The frontend is responsible for:
 
-FRAGMENTS is designed as a full-stack AI media generation system.
+- User topic input
+- Dashboard rendering
+- Generation status tracking
+- Generated video library management
+- Video playback
+- Stream and download interaction
+- Responsive UI workflow
 
-The frontend handles the user interface, form inputs, status updates, video library, and playback experience. The backend manages AI generation, file processing, video assembly, API routes, and media delivery.
+The interface is designed to provide a clean generation experience while handling long-running AI media tasks.
 
-The project separates the workflow into clear stages: script generation, image generation, audio generation, subtitle generation, and final video assembly. This makes the system easier to debug, extend, and improve.
+---
 
-## Screenshots
+# Backend Responsibilities
 
-Screenshots of the deployed project are included in this preview repository to show the user interface, generation workflow, dashboard, and final video output.
+The backend manages:
 
-## Why This Project Is Useful
+- AI prompt orchestration
+- Script generation
+- Scene structuring
+- Image preparation workflow
+- Narration generation
+- Subtitle generation
+- Video rendering pipeline
+- File management
+- API routing
+- Media delivery
 
-Creating educational videos manually takes time because it requires writing scripts, finding visuals, recording narration, editing subtitles, and assembling the final video. FRAGMENTS automates most of this workflow and provides a single dashboard where users can generate and manage videos.
+The backend acts as the orchestration layer for the complete educational video generation system.
 
-## Current Status
+---
 
-FRAGMENTS is deployed and working as a full-stack AI video generation project. The public preview repository is provided for project demonstration, while the complete source code remains private.
+# Backend API Surface
 
-## Author
+| Area | Endpoints |
+|---|---|
+| Health | `GET /api/health` |
+| Video Generation | `POST /api/generate` |
+| Video Library | `GET /api/videos` |
+| Video Streaming | `GET /api/videos/:id` |
+| Video Download | `GET /api/videos/:id/download` |
+| Delete Video | `DELETE /api/videos/:id` |
 
-Built by Rayan.
+---
+
+# Media Processing Architecture
+
+FRAGMENTS uses a layered media processing architecture:
+
+- AI-generated educational scripting
+- Scene segmentation and timing
+- Visual asset preparation
+- AI narration generation
+- Subtitle synchronization
+- FFmpeg-based rendering
+- Final MP4 encoding
+
+The rendering workflow combines Python media processing utilities with automated AI content generation.
+
+---
+
+# Validation And Testing
+
+Verified checks include:
+
+- Production deployment validation
+- Frontend build validation
+- Backend API validation
+- Video generation workflow testing
+- Subtitle rendering checks
+- Narration synchronization testing
+- Dashboard rendering validation
+- Generated video playback testing
+- Download workflow validation
+- FFmpeg rendering verification
+
+---
+
+# Current Limitations
+
+- Generation time depends on media complexity
+- AI-generated educational content may require manual review
+- Visual quality depends on generated assets
+- Public repository contains preview content only
+- Full production source code remains private
+
+This repository exists for project showcase, workflow explanation, and recruiter preview purposes.
+
+---
+
+# What This Project Demonstrates
+
+- Full-stack AI application architecture
+- AI-assisted educational content generation
+- Multimedia processing workflows
+- Video rendering pipeline integration
+- Backend orchestration systems
+- Frontend dashboard development
+- Real-world AI automation workflows
+- Media streaming and delivery systems
+- Production deployment using Vercel
+
+---
+
+# Screenshots
+
+This preview repository includes screenshots demonstrating:
+
+- Dashboard interface
+- Topic generation workflow
+- Video processing pipeline
+- Generated educational video output
+- Playback and library management experience
+
+---
+
+# Current Status
+
+FRAGMENTS is deployed and functioning as a full-stack AI educational video generation platform.
+
+The public preview repository is intended for:
+
+- Recruiter showcase
+- Workflow demonstration
+- Architecture overview
+- Deployment preview
+- Technical project presentation
+
+---
+
+# Author
+
+Rayan Qamar
