@@ -147,7 +147,7 @@ Verified checks include:
 - Public repository contains preview content only
 - Full production source code remains private
 
-This repository exists for recruiter showcase, workflow explanation, and project demonstration purposes.
+This repository exists for recruiter showcase, workflow explanation, and technical project presentation.
 
 ---
 
@@ -165,12 +165,7 @@ This repository exists for recruiter showcase, workflow explanation, and project
 
 # Screenshots
 
-This preview repository includes screenshots of:
-
-- Dashboard interface
-- Generation workflow
-- Video processing stages
-- Final educational video output
+Screenshots are included in this repository to showcase the UI, workflow, generated videos, and overall project experience.
 
 ---
 
@@ -178,7 +173,7 @@ This preview repository includes screenshots of:
 
 FRAGMENTS is deployed and functioning as a complete AI-powered educational video generation platform.
 
-The public repository is intended for project showcase and technical demonstration.
+The public repository is intended for project showcase, architecture overview, and technical demonstration purposes.
 
 ---
 
